@@ -11,15 +11,20 @@ namespace constants{
 } using namespace constants;
 
 
-double what(double howmanyIter_left, double velocity, int time) {
+double what(auto howmanyIter_left, auto velocity, auto time) {
 	// exit 
 	if(!howmanyIter_left){
 		return velocity;
 	}
 	
 	// process
-	velocity = (gg*mp/cc) * (1 - pow(
+	/*velocity = (gg*mp/cc) * (1 - pow(
 				ee,
+				(-1 * cc / mp)  * 2 * time)
+				);
+	*/
+	velocity = (gg*mp/cc) * (1 - pow(
+				M_E,
 				(-1 * cc / mp)  * 2 * time)
 				);
 
@@ -34,9 +39,9 @@ int main(int argc, char** asdf){
 		return EXIT_FAILURE;
 	}
 
-	int time = atoi(asdf[1]);		// convert string to int
-	int howmanyIters = time / 2;
+	unsigned long long int time = atoi(asdf[1]);		// convert string to int
+	auto howmanyIters = time / 2;
 	
 
-	std::cout << what(howmanyIters, 0, 0) << "\n\n";
+	std::cout << what(howmanyIters, time / time - 1, time / time -1) << "\n\n";
 }
