@@ -4,6 +4,7 @@
 #include <typeinfo>
 // see seatwork 1 & 2 from numerical methods
 // testing recursion instead of loops
+using std::chrono;
 
 namespace constants{
 	double ee = 2.14;
@@ -40,7 +41,7 @@ void printDebug(std::string functionName){
 	std::cout <<   "\nfrom " << functionName << ":\n";
 }
 
-unsigned long long int convert_uint(const std::string& noice){
+unsigned long long int convert_uint(std::string const& noice){
 	unsigned short int numberOf_digits = noice.size();
 
 	printDebug("convert_uint");
@@ -66,25 +67,25 @@ int main(int argc, char** asdf){
 		std::cerr << "use " << asdf[0] << " <max time>\n";
 		return EXIT_FAILURE;
 	}
-	std::cerr << "type of asdf " << typeid(asdf[1]).name() << std::endl;
-	std::chrono::time_point<std::chrono::system_clock> start, end;
+	;;;;;;	std::cerr << "type of asdf " << typeid(asdf[1]).name() << std::endl;
+	;;;;;;	time_point<system_clock> start, end;
 
 
 
-	start = std::chrono::system_clock::now();
+	;;;;;;	start = system_clock::now();
 	unsigned long long int time = atoi(asdf[1]);		// convert string to int
-	end   = std::chrono::system_clock::now();
-	std::chrono::duration<double> elapsedSeconds = end - start;
-	std::cerr << "\n\n\tatoi elapsed: " << elapsedSeconds.count();
+	;;;;;;	end   = system_clock::now();
+	;;;;;;	duration<double> elapsedSeconds = end - start;
+	;;;;;;	std::cerr << "\n\n\tatoi elapsed: " << elapsedSeconds.count();
 	
 
-	start = std::chrono::system_clock::now();
+	;;;;;;	start = system_clock::now();
 	unsigned long long int time2 = convert_uint(asdf[1]);
-	end   = std::chrono::system_clock::now();
+	;;;;;;	end   = system_clock::now();
 
 
-	elapsedSeconds = end - start;
-	std::cerr << "\n\n\tcust elapsed: " << elapsedSeconds.count();
+	;;;;;;	elapsedSeconds = end - start;
+	;;;;;;	std::cerr << "\n\n\tcust elapsed: " << elapsedSeconds.count();
 
 
 	auto howmanyIters = time / 2;
