@@ -4,9 +4,9 @@
 
 
 
-int main(int argv, char argc[])
+int main(int argc, char* argv[])
 {
 
-	check_correctArgs(argv, argc);
-
+	check_correctArgs(argc,argv);
+	
 }
